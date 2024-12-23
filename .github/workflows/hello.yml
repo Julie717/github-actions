@@ -1,0 +1,17 @@
+name: Setting up a Basic GitHub Action
+on:
+  push:
+    branches:
+      - master
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository to the runner
+        uses: actions/checkout@v4
+      - name: Add rights to execute script
+        run: chmod +x task1/hello.py
+      - name: Run hello.py script
+        run: ./task1/hello.py
+
+
